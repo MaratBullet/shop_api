@@ -22,3 +22,15 @@ def send_reset_password(user):
         [to_email],
         fail_silently=False,
     )
+
+
+
+def send_notification(user, id):
+    to_email= user.email
+    send_mail(
+        'Уведомление о создании заказов!',
+        'Вы создали заказ №{id}, ожидайте звонка от курьера! Спасибо за доверие! ',
+        'market.place@gmail.com' ,
+        [to_email],
+        fail_silently=False,
+    )
